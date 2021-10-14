@@ -14,6 +14,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.todomanager.databinding.FragmentHomeBinding;
+import com.example.todomanager.utils.Constants;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -44,7 +45,8 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         String userTask = "";
-        Log.e("ololo", "onViewCreated: " + userTask);
+        Log.d("tag", "user ");
+
     }
 
     @Override

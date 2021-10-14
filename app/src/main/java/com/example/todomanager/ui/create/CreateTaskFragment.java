@@ -2,6 +2,7 @@ package com.example.todomanager.ui.create;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,20 +32,18 @@ public class CreateTaskFragment extends Fragment {
 
     }
 
-
-    @SuppressLint("WrongConstant")
     @Override
-    public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        userTask = binding.edTask.getText().toString();
         binding.btnApply.setOnClickListener(v -> {
-            CreateTaskFragment fragment = new CreateTaskFragment();
+            userTask = binding.edTask.getText().toString();
             Bundle bundle = new Bundle();
             bundle.putString(Constants.USER_TASK, userTask);
+            CreateTaskFragment fragment = new CreateTaskFragment();
             fragment.setArguments(bundle);
             navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_content_main);
             navController.navigate(R.id.action_createTaskFragment_to_nav_home3, bundle);
+            Log.e("tag", "kil");
 
 
         });
