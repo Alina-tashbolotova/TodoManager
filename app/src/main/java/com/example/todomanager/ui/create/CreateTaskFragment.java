@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,9 +21,9 @@ import com.example.todomanager.utils.Constants;
 import org.jetbrains.annotations.NotNull;
 
 public class CreateTaskFragment extends Fragment {
-    String userTask;
     NavController navController;
     private FragmentCreateTaskBinding binding;
+    String userTask;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -38,14 +39,10 @@ public class CreateTaskFragment extends Fragment {
         binding.btnApply.setOnClickListener(v -> {
             userTask = binding.edTask.getText().toString();
             Bundle bundle = new Bundle();
-            bundle.putString(Constants.USER_TASK, userTask);
-            CreateTaskFragment fragment = new CreateTaskFragment();
-            fragment.setArguments(bundle);
-            navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_content_main);
-            navController.navigate(R.id.action_createTaskFragment_to_nav_home3, bundle);
-            Log.e("tag", "kil");
-
-
+            bundle.putString(Constants.USER_TASK,userTask);
+            navController = Navigation.findNavController(requireActivity(),R.id.nav_host_fragment_content_main);
+            navController.navigate(R.id.nav_home,bundle);
+            Toast.makeText(requireContext(), " " + bundle.getString(Constants.USER_TASK,userTask), Toast.LENGTH_SHORT).show();
         });
     }
 

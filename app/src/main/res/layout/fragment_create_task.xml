@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/notes"
-        android:text="Google"
+        tools:text="Google"
         android:textColor="@color/black"
         android:textColorHint="@color/gray"
         android:textSize="@dimen/ed_text_size_30" />
