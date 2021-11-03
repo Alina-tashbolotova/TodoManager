@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,22 +8,60 @@
     android:padding="16dp"
     tools:context=".ui.create.CreateTaskFragment">
 
+
     <EditText
-        android:id="@+id/ed_task"
+        android:id="@+id/ed_create_task"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/notes"
-        tools:text="Google"
-        android:textColor="@color/black"
-        android:textColorHint="@color/gray"
-        android:textSize="@dimen/ed_text_size_30" />
+        android:layout_marginTop="@dimen/dp60"
+        android:backgroundTint="@color/red"
+        android:hint="@string/google" />
+
+    <TextView
+        android:id="@+id/txt_time_create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/margin_top16" />
+
+    <TextView
+        android:id="@+id/txt_date_create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/margin_top16" />
+
+    <ImageView
+        android:id="@+id/image_create"
+        android:layout_width="@dimen/width200"
+        android:layout_height="@dimen/height200"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/margin16"
+        app:srcCompat="@drawable/ic_baseline_people_alt_24" />
+
 
     <Button
-        android:id="@+id/btn_apply"
+        android:id="@+id/btn_create_task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/margin_top16"
+        android:backgroundTint="@color/red"
+        android:text="@string/photo2" />
+
+    <Button
+        android:id="@+id/btn_set_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/red"
+        android:text="@string/data" />
+
+    <Button
+        android:id="@+id/btn_send"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/btn_margin_top_12"
-        android:text="@string/accept" />
-
+        android:backgroundTint="@color/red"
+        android:text="@string/send" />
 
 </LinearLayout>
